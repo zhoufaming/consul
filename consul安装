@@ -1,0 +1,8 @@
+操作系统：Centos7
+IP地址规划
+192.168.151.40          consul-server01
+192.168.151.72          consul-server02
+
+
+yum install -y unzip
+wget https://releases.hashicorp.com/consul/1.4.2/consul_1.4.2_linux_amd64.zip
