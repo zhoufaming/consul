@@ -15,11 +15,12 @@ unzip consul_1.4.2_linux_amd64.zip /usr/bin
 访问 http://192.168.151.40:8500/ui/
 
 配置server文件启动
+mkdir /etc/consul/
 vim /lib/systemd/system/consul.service
 [Unit]
 Description=consul
 [Service]
-ExecStart=/usr/bin/consul agent -config-dir /etc/consul
+ExecStart=/usr/bin/consul agent -ui -config-dir /etc/consul
 KillSignal=SIGINT
 
 
