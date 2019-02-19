@@ -6,7 +6,8 @@ IP地址规划
 
 yum install -y unzip
 wget https://releases.hashicorp.com/consul/1.4.2/consul_1.4.2_linux_amd64.zip
-unzip consul_1.4.2_linux_amd64.zip /usr/bin
+unzip consul_1.4.2_linux_amd64.zip 
+mv consul /usr/bin/
 //-A INPUT -m state --state NEW -m tcp -p tcp --dport 8500 -j ACCEPT  开放默认端口8500
 
 [root@pyuser1]# consul agent -server -bootstrap -ui -data-dir=/var/lib/consul-data -bind=192.168.151.40  -client=0.0.0.0 -node=192.168.151.40 
