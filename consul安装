@@ -13,3 +13,11 @@ unzip consul_1.4.2_linux_amd64.zip /usr/bin
 [root@pyuser4]# consul agent -server -join=192.168.151.40  -data-dir=/var/lib/consul-data -bind=192.168.151.72 -client=0.0.0.0 -node=192.168.151.72
 
 访问 http://192.168.151.40:8500/ui/
+
+配置server文件启动
+vim /lib/systemd/system/consul.service
+[Unit]
+Description=consul
+[Service]
+ExecStart=/usr/bin/consul agent -config-dir /etc/consul
+KillSignal=SIGINT
